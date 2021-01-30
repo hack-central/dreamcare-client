@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// import Landing from './views/Landing';
+import Landing from './views/Landing';
 import Home from './views/Home';
 
 import './App.css';
@@ -14,7 +14,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/">
-            {/* <Landing /> */}
+            <Landing />
           </Route>
         </Switch>
       </Router>
