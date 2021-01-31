@@ -48,33 +48,8 @@ export default function Home() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     if (query) {
-  //       const url =
-  //         'https://mind-palace-api-dot-eastern-surface-293816.el.r.appspot.com/api/nlp';
-  //       var bodyFormData = new FormData();
-  //       bodyFormData.append('data', query);
-  //       const config = {
-  //         method: 'post',
-  //         url: 'http://localhost:8080/api/nlp',
-  //         headers: {
-  //           'Content-Type': 'multipart/form-data',
-  //         },
-  //         data: bodyFormData,
-  //       };
-
-  //       const res = await axios(config);
-  //       if (res && res.data.success) {
-  //         const analyticsResponse = res.data;
-  //         setResponse(analyticsResponse);
-  //       }
-  //     }
-  //   })();
-  // }, [query]);
-
   if (response) {
-    <Redirect to={{ pathname: '/report', state: response }} />;
+    <Redirect to={{ pathname: '/report', state: { response, query } }} />;
   }
 
   const sendData = async () => {
