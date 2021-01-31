@@ -23,7 +23,13 @@ export default function Report() {
   return (
     <div>
       <div className="daily-stats">
-        <div className="daily-stats-card">{query}</div>
+        <div
+          className="daily-stats-card"
+          style={{ padding: '20px', overflowY: 'scroll' }}
+        >
+          <h1>Today's Journal</h1>
+          {query}
+        </div>
         <div className="daily-stats-card">
           <MoodCard data={data} />
         </div>
@@ -37,17 +43,27 @@ export default function Report() {
           <Row justify="center">
             <Col justify="center">
               <MoodRadarChart />
-              <p style={{ textAlign: 'left', paddingLeft: '55px' }}>
+              <p
+                style={{
+                  textAlign: 'left',
+                  paddingLeft: '55px',
+                  fontWeight: 800,
+                }}
+              >
                 Overall Mood Radar Chart
               </p>
             </Col>
             <Col justify="center">
               <HappinessChart />
-              Weekly Happiness Chart
+              <p style={{ textAlign: 'center', fontWeight: 800 }}>
+                Weekly Happiness Chart
+              </p>
             </Col>
             <Col justify="center">
               <DiaryChart />
-              Dream Journaling Frequency
+              <p style={{ textAlign: 'center', fontWeight: 800 }}>
+                Dream Journaling Frequency
+              </p>
             </Col>
           </Row>
         </div>

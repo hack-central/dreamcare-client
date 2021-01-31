@@ -57,7 +57,7 @@ export default class HappinessChart extends PureComponent {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Area type="monotone" dataKey="score" stroke="#13113c" fill="#00c2fb" />
+        <Area type="monotone" dataKey="score" stroke="#bc9f6b" fill="#bc9f6bc2" />
       </AreaChart>
     );
   }

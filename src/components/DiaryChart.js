@@ -7,7 +7,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from 'recharts';
 
 const data = [
@@ -59,8 +58,7 @@ export default class Example extends PureComponent {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="frequency" fill="#bc9f6b73" />
+        <Bar dataKey="frequency" stroke="#bc9f6b" fill="#bc9f6bc2" />
       </BarChart>
     );
   }

@@ -682,7 +682,7 @@ a:focus {
 .daily-stats {
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 
@@ -691,7 +691,8 @@ a:focus {
   flex-direction: column;
   position: relative;
   /* justify-content: center; */
-  align-items: center;
+  padding-left: 10px;
+  align-items: flex-start;
   flex: 1;
   margin: 20px;
   background: #f7eee6;
