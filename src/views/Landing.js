@@ -7,6 +7,7 @@ export default function Landing() {
   return (
     <div className="main">
       <img
+        alt="jabardasti"
         src={landingImage}
         style={{ borderRadius: '50%', maxWidth: '250px', marginTop: '20px' }}
       />
