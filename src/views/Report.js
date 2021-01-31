@@ -4,6 +4,7 @@ import HappinessChart from '../components/HappinessChart';
 import MoodCard from '../components/MoodCard';
 import MoodRadarChart from '../components/MoodRadarChart';
 import DiaryChart from '../components/DiaryChart';
+import Product from '../components/Product';
 
 export default function Report() {
   return (
@@ -33,6 +34,16 @@ export default function Report() {
               <DiaryChart />
               Dream Journaling Frequency
             </Col>
+          </Row>
+        </div>
+      </div>
+      <div className="daily-stats">
+        <div className="weekly-stats-card">
+          <Row>
+            <Product />
+            <Product />
+            <Product />
+            <Product />
           </Row>
         </div>
       </div>
