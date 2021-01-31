@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { Spin } from 'antd';
 import SpeechRecognition, {
   useSpeechRecognition,
 } from 'react-speech-recognition';
@@ -13,6 +14,7 @@ export default function Home() {
   const [bars, setBars] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [response, setResponse] = useState(undefined);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -52,6 +54,7 @@ export default function Home() {
 
   const sendData = async () => {
     if (query) {
+      setLoading(true);
       const url =
         'https://mind-palace-api-dot-eastern-surface-293816.el.r.appspot.com/api/nlp';
       var bodyFormData = new FormData();
@@ -74,45 +77,53 @@ export default function Home() {
           JSON.stringify({ response: analyticsResponse, query })
         );
         history.push('/report');
+        setLoading(false);
       }
     }
   };
 
   return (
     <div className="journal-container">
-      <div className="journal-column">
-        <h3 className="speech-input">{transcript}</h3>
-        <h1 className="speech-output">Talk about your dream</h1>
-        <div className="voice-button">
-          <button
-            className={
-              listening
-                ? 'voice-button-icon voice-button-icon-active'
-                : 'voice-button-icon'
-            }
-            onClick={() => {
-              if (!listening) {
-                SpeechRecognition.startListening({
-                  language: 'en-IN',
-                  continuous: true,
-                });
-              } else {
-                SpeechRecognition.stopListening();
+      {isLoading && (
+        <div className="journal-column">
+          <Spin size="large" />
+        </div>
+      )}
+      {!isLoading && (
+        <div className="journal-column">
+          <h3 className="speech-input">{transcript}</h3>
+          <h1 className="speech-output">Talk about your dream</h1>
+          <div className="voice-button">
+            <button
+              className={
+                listening
+                  ? 'voice-button-icon voice-button-icon-active'
+                  : 'voice-button-icon'
               }
-            }}
-          >
-            <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
-          </button>
-        </div>
-        {listening && (
-          <div className="voice-coder">
-            <Visualizer bars={bars} />
+              onClick={() => {
+                if (!listening) {
+                  SpeechRecognition.startListening({
+                    language: 'en-IN',
+                    continuous: true,
+                  });
+                } else {
+                  SpeechRecognition.stopListening();
+                }
+              }}
+            >
+              <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
+            </button>
           </div>
-        )}
-        <div className="btn" onClick={sendData}>
-          <Link className="play">Save!</Link>
+          {listening && (
+            <div className="voice-coder">
+              <Visualizer bars={bars} />
+            </div>
+          )}
+          <div className="btn" onClick={sendData}>
+            <Link className="play">Save!</Link>
+          </div>
         </div>
-      </div>
+      )}
       <div
         className="journal-column"
         contentEditable

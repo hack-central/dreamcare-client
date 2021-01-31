@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 import confident from '../assets/moodImages/confident.png';
+import creative from '../assets/moodImages/creative.png';
+import irritated from '../assets/moodImages/irritated.png';
+import loving from '../assets/moodImages/loving.png';
+import sad from '../assets/moodImages/sad.png';
 
 import './MoodCard.css';
 
@@ -7,6 +11,7 @@ export default function MoodCard({ data }) {
   const [emotionHigh, setEmotionHigh] = useState('');
   const [emotionMed, setEmotionMed] = useState('');
   const [emotionLow, setEmotionLow] = useState('');
+  const [moodImage, setMoodImage] = useState(confident);
 
   useEffect(() => {
     if (data) {
@@ -14,7 +19,10 @@ export default function MoodCard({ data }) {
       const moods = tags.map((e) => e.slice(0, -10));
       setEmotionHigh(moods[0]);
       setEmotionMed(moods[1]);
-      setEmotionLow(moods[2] || "ecstacy");
+      setEmotionLow(moods[2] || 'ecstacy');
+      const imgs = [confident, creative, irritated, loving, sad];
+      const randomNum = Math.floor(Math.random() * (4 - 0 + 1) + 0);
+      setMoodImage(imgs[randomNum]);
     }
   }, [data]);
 
@@ -31,7 +39,7 @@ export default function MoodCard({ data }) {
       </div>
 
       <div class="product-image">
-        <img src={confident} alt="Feeling illustration" />
+        <img src={moodImage} alt="Feeling illustration" />
 
         <div class="info">
           <h2>Feelings today</h2>
