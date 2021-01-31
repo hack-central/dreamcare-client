@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css';
+// import 'tailwindcss/tailwind.css';
 import MoodCard from '../components/MoodCard';
 
 export default function Report() {
