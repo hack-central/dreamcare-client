@@ -1,3 +1,4 @@
+@import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins&display=swap');
 
@@ -691,6 +692,19 @@ a:focus {
   position: relative;
   /* justify-content: center; */
   align-items: center;
+  flex: 1;
+  margin: 20px;
+  background: #f7eee6;
+  box-shadow: 0 4px 32px 0 #bc9f6b66;
+  border-radius: 10px;
+  border: 2px solid #bc9f6b73;
+}
+
+.weekly-stats-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
   flex: 1;
   margin: 20px;
   background: #f7eee6;
