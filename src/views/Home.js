@@ -7,46 +7,19 @@ import SpeechRecognition, {
 import speak from '../assets/speak.svg';
 
 export default function Home() {
-  const MAX_TIME = 120;
-  const HINTS_TIME = 30;
   const { transcript, listening } = useSpeechRecognition();
-  const [timeLeft, setTimeLeft] = useState(MAX_TIME);
   const [query, setQuery] = useState('');
-  const [textQuery, setTextQuery] = useState('');
   const [audioBuffer, setAudioBuffer] = useState(undefined);
   const [bars, setBars] = useState([]);
-  const [response, setResponse] = useState('Lets get started detective!');
-
-  const countdown = () => {
-    let timerDuration = MAX_TIME;
-    const timer = setInterval(() => {
-      if (timerDuration >= 0) {
-        timerDuration = timerDuration - 1;
-        setTimeLeft(timerDuration);
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  };
+  const [response, setResponse] = useState('Lets talk about your dream!');
 
   useEffect(() => {
     const timer = setInterval(() => {
       setQuery(transcript);
-    }, 1500);
+    }, 100);
 
     return () => clearInterval(timer);
   }, [transcript]);
-
-  useEffect(() => {
-    countdown();
-
-    const timer = setTimeout(() => {
-      //   history.push('/result');
-    }, MAX_TIME * 1000);
-
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     navigator.mediaDevices
@@ -119,15 +92,26 @@ export default function Home() {
   return (
     <div className="journal-container">
       <div className="journal-column">
-        <h3 className="speech-input">{transcript}hfueshui fuioh ghu eiouher giuo</h3>
-        <h1 className="speech-output">"Lets talk about your dream!"</h1>
+        <h3 className="speech-input">{transcript}</h3>
+        <h1 className="speech-output">Talk about your dream</h1>
 
         <div className="voice-button">
           <button
-            className="voice-button-icon"
-            onClick={() =>
-              SpeechRecognition.startListening({ language: 'en-IN' })
+            className={
+              listening
+                ? 'voice-button-icon voice-button-icon-active'
+                : 'voice-button-icon'
             }
+            onClick={() => {
+              if (!listening) {
+                SpeechRecognition.startListening({
+                  language: 'en-IN',
+                  continuous: true,
+                });
+              } else {
+                SpeechRecognition.stopListening();
+              }
+            }}
           >
             <img style={{ maxWidth: '40px' }} src={speak} alt="speak icon" />
           </button>
@@ -138,14 +122,19 @@ export default function Home() {
           </div>
         )}
         <div className="btn">
-        <Link to="" class="play">
+          <Link to="" class="play">
             Save!
-        </Link>
+          </Link>
         </div>
-        
       </div>
 
-      <div className="journal-column">...</div>
+      <div
+        className="journal-column"
+        contentEditable
+        onChange={(e) => setQuery(e.target.value)}
+      >
+        {query}
+      </div>
     </div>
   );
 }
