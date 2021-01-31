@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +10,147 @@
 body {
   width: 100vw;
   height: 100vh;
-   background-image: radial-gradient(circle at 65% 15%, #bc9f6b1c 0%, #bc9f6b1c 3%,transparent 3%, transparent 100%),radial-gradient(circle at 40% 33%, #bc9f6b0d 0%, #bc9f6b0d 3%,transparent 3%, transparent 100%),radial-gradient(circle at 9% 92%, #bc9f6b0d 0%, #bc9f6b0d 3%,transparent 3%, transparent 100%),radial-gradient(circle at 84% 0%, #bc9f6b1c 0%, #bc9f6b1c 7%,transparent 7%, transparent 100%),radial-gradient(circle at 97% 94%, #bc9f6b0d 0%, #bc9f6b0d 7%,transparent 7%, transparent 100%),radial-gradient(circle at 13% 95%, rgba(188,159,107, 0.12) 0%, rgba(188,159,107, 0.12) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 77% 8%, #bc9f6b0d 0%, #bc9f6b0d 7%,transparent 7%, transparent 100%),radial-gradient(circle at 58% 0%, #bc9f6b0d 0%, #bc9f6b0d 7%,transparent 7%, transparent 100%),radial-gradient(circle at 76% 71%, rgba(188,159,107, 0.12) 0%, rgba(188,159,107, 0.12) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 88% 74%, #bc9f6b1c 0%, #bc9f6b1c 7%,transparent 7%, transparent 100%),radial-gradient(circle at 74% 99%, #bc9f6b0d 0%, #bc9f6b0d 7%,transparent 7%, transparent 100%),radial-gradient(circle at 16% 56%, rgba(188,159,107, 0.12) 0%, rgba(188,159,107, 0.12) 7%,transparent 7%, transparent 100%),radial-gradient(circle at 25% 4%, rgba(188,159,107, 0.12) 0%, rgba(188,159,107, 0.12) 5%,transparent 5%, transparent 100%),radial-gradient(circle at 54% 83%, #bc9f6b0d 0%, #bc9f6b0d 5%,transparent 5%, transparent 100%),radial-gradient(circle at 70% 60%, #bc9f6b0d 0%, #bc9f6b0d 5%,transparent 5%, transparent 100%),radial-gradient(circle at 23% 73%, #bc9f6b0d 0%, #bc9f6b0d 5%,transparent 5%, transparent 100%),radial-gradient(circle at 63% 81%, #bc9f6b1c 0%, #bc9f6b1c 5%,transparent 5%, transparent 100%),radial-gradient(circle at 56% 58%, #bc9f6b0d 0%, #bc9f6b0d 5%,transparent 5%, transparent 100%),radial-gradient(circle at 64% 68%, #bc9f6b0d 0%, #bc9f6b0d 5%,transparent 5%, transparent 100%),radial-gradient(circle at 52% 48%, #bc9f6b1c 0%, #bc9f6b1c 5%,transparent 5%, transparent 100%),linear-gradient(135deg, rgb(246,234,226),rgb(252,248,244));
+  background-image: radial-gradient(
+      circle at 65% 15%,
+      #bc9f6b1c 0%,
+      #bc9f6b1c 3%,
+      transparent 3%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 40% 33%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 3%,
+      transparent 3%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 9% 92%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 3%,
+      transparent 3%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 84% 0%,
+      #bc9f6b1c 0%,
+      #bc9f6b1c 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 97% 94%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 13% 95%,
+      rgba(188, 159, 107, 0.12) 0%,
+      rgba(188, 159, 107, 0.12) 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 77% 8%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 58% 0%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 76% 71%,
+      rgba(188, 159, 107, 0.12) 0%,
+      rgba(188, 159, 107, 0.12) 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 88% 74%,
+      #bc9f6b1c 0%,
+      #bc9f6b1c 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 74% 99%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 16% 56%,
+      rgba(188, 159, 107, 0.12) 0%,
+      rgba(188, 159, 107, 0.12) 7%,
+      transparent 7%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 25% 4%,
+      rgba(188, 159, 107, 0.12) 0%,
+      rgba(188, 159, 107, 0.12) 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 54% 83%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 23% 73%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 63% 81%,
+      #bc9f6b1c 0%,
+      #bc9f6b1c 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 56% 58%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 64% 68%,
+      #bc9f6b0d 0%,
+      #bc9f6b0d 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 52% 48%,
+      #bc9f6b1c 0%,
+      #bc9f6b1c 5%,
+      transparent 5%,
+      transparent 100%
+    ),
+    linear-gradient(135deg, rgb(246, 234, 226), rgb(252, 248, 244));
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow-x: hidden;
@@ -164,15 +305,14 @@ textarea:focus{
   justify-content: center;
 }
 
-.btn{
-    justify-self: center;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 10px;
+.btn {
+  justify-self: center;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 10px;
 }
 .voice-button {
-    margin: 50px 0;
-  /* margin: 50px 0;
+  margin: 50px 0;
   padding-bottom: 25px;
   position: relative;
   width: 100%;
@@ -183,7 +323,7 @@ textarea:focus{
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
 .voice-button:after {
@@ -214,7 +354,7 @@ textarea:focus{
   transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1),
     transform 200ms cubic-bezier(0.2, 0, 0.7, 1),
     -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
-    border: 1px solid #bc9f6b73;
+  border: 1px solid #bc9f6b73;
 }
 
 .voice-button-icon:hover {
@@ -547,6 +687,28 @@ textarea:focus{
   opacity: 0.2;
 }
 
+/* Report page styles */
+.daily-stats {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+}
+
+.daily-stats-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* justify-content: center; */
+  align-items: center;
+  flex: 1;
+  margin: 20px;
+  background: #f7eee6;
+  box-shadow: 0 4px 32px 0 #bc9f6b66;
+  border-radius: 10px;
+  border: 2px solid #bc9f6b73;
+}
+
 /* Text Field Area with submit */
 
 .search-box,
@@ -596,6 +758,7 @@ textarea:focus{
 }
 
 @media all and (max-width: 600px) {
-  .journal-container {flex-direction: column;}
-    
+  .journal-container {
+    flex-direction: column;
+  }
 }

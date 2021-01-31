@@ -8,7 +8,7 @@ export default function Landing() {
     <div className="main">
       <img
         src={landingImage}
-        style={{ borderRadius: '50%', maxWidth: '250px', marginTop:'20px'}}
+        style={{ borderRadius: '50%', maxWidth: '250px', marginTop: '20px' }}
       />
       <h1 className="glowing-text">Mind Palace</h1>
       <div className="intro">
