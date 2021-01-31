@@ -9,37 +9,37 @@ import {
 
 const data = [
   {
-    subject: 'Math',
+    subject: 'Happy',
     A: 120,
     B: 110,
     fullMark: 150,
   },
   {
-    subject: 'Chinese',
+    subject: 'Joyful',
     A: 98,
     B: 130,
     fullMark: 150,
   },
   {
-    subject: 'English',
+    subject: 'Irritated',
     A: 86,
     B: 130,
     fullMark: 150,
   },
   {
-    subject: 'Geography',
+    subject: 'Sad',
     A: 99,
     B: 100,
     fullMark: 150,
   },
   {
-    subject: 'Physics',
+    subject: 'Anger',
     A: 85,
     B: 90,
     fullMark: 150,
   },
   {
-    subject: 'History',
+    subject: 'Sorrow',
     A: 65,
     B: 85,
     fullMark: 150,
@@ -63,8 +63,8 @@ export default class Example extends PureComponent {
         <Radar
           name="Mike"
           dataKey="A"
-          stroke="#8884d8"
-          fill="#8884d8"
+          stroke="#0099b2"
+          fill="#9bd933"
           fillOpacity={0.6}
         />
       </RadarChart>

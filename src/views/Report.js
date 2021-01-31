@@ -22,15 +22,17 @@ export default function Report({ query, response }) {
             <h6>(Placeholder data for the purpose of the hack)</h6>
           </Row>
           <Row justify="center">
-            <Col>
+            <Col justify="center">
               <MoodRadarChart />
-              Overall Mood Radar Chart
+              <p style={{ textAlign: 'left', paddingLeft: '55px' }}>
+                Overall Mood Radar Chart
+              </p>
             </Col>
-            <Col>
+            <Col justify="center">
               <HappinessChart />
               Weekly Happiness Chart
             </Col>
-            <Col>
+            <Col justify="center">
               <DiaryChart />
               Dream Journaling Frequency
             </Col>
