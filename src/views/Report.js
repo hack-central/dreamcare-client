@@ -1,4 +1,4 @@
-import { Card, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 import HappinessChart from '../components/HappinessChart';
 import MoodCard from '../components/MoodCard';
 import MoodRadarChart from '../components/MoodRadarChart';

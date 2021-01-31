@@ -11,6 +11,7 @@ export default function Home() {
   const { transcript, listening } = useSpeechRecognition();
   const [query, setQuery] = useState('');
   const [bars, setBars] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [response, setResponse] = useState(undefined);
 
   useEffect(() => {
