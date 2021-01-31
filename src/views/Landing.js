@@ -10,7 +10,7 @@ export default function Landing() {
         src={landingImage}
         style={{ borderRadius: '50%', maxWidth: '250px', marginTop: '20px' }}
       />
-      <h1 className="glowing-text">Mind Palace</h1>
+      <h1 className="glowing-text">DreamCare</h1>
       <div className="intro">
         Transforming your dreams to help build a healthy mind for yourself.
         <br />
@@ -30,7 +30,6 @@ export default function Landing() {
           </Link>
         )}
         <a
-          className="info"
           target="_blank"
           rel="noreferrer"
           href="https://github.com/hack-central/mind-palace-client"

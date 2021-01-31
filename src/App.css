@@ -5,7 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -201,7 +201,25 @@ a:focus {
 }
 
 .journal-column {
-	/*overflow: hidden;*/
+  /*overflow: hidden;*/
+  width: 80%;
+  min-width: 200px;
+  min-height: 90vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+  margin: 20px;
+  background: #f7eee6;
+  box-shadow: 0 4px 32px 0 #bc9f6b66;
+  border-radius: 10px;
+  border: 2px solid #bc9f6b73;
+}
+
+.journal-column-output {
+  text-align: left !important;
   width: 80%;
   min-width: 200px;
   min-height: 90vh;
@@ -494,11 +512,13 @@ a:focus {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  max-width: 80%;
+  padding-top: 10px;
 }
 .voice-coder span {
   position: relative;
   z-index: 2;
-  width: 100%;
+  width: 50%;
   height: 2px;
   background: linear-gradient(
     #241d11 5%,

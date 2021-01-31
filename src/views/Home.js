@@ -125,11 +125,14 @@ export default function Home() {
         </div>
       )}
       <div
-        className="journal-column"
+        className="journal-column-output"
         contentEditable
         onChange={(e) => setQuery(e.target.value)}
         suppressContentEditableWarning
       >
+        <p style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'left' }}>
+          Dear Journal,{' '}
+        </p>
         {query}
       </div>
     </div>
