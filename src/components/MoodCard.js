@@ -14,7 +14,7 @@ export default function MoodCard({ data }) {
       const moods = tags.map((e) => e.slice(0, -10));
       setEmotionHigh(moods[0]);
       setEmotionMed(moods[1]);
-      setEmotionLow(moods[2] || "ecstacy");
+      setEmotionLow(moods[2] || 'ecstacy');
     }
   }, [data]);
 

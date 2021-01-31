@@ -82,7 +82,7 @@ export default function Home() {
     <div className="journal-container">
       <div className="journal-column">
         <h3 className="speech-input">{transcript}</h3>
-        <h1 className="speech-output">Talk about your dream</h1>
+        <h1 className="speech-output">Describe your dream!</h1>
         <div className="voice-button">
           <button
             className={
@@ -114,11 +114,14 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="journal-column"
+        className="journal-column-output"
         contentEditable
         onChange={(e) => setQuery(e.target.value)}
         suppressContentEditableWarning
       >
+        <p style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'left' }}>
+          Dear Journal,{' '}
+        </p>
         {query}
       </div>
     </div>

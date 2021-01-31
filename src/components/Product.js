@@ -15,7 +15,7 @@ export default function Product({ data: { tags, image, link, title } }) {
               marginBottom: '-3px',
             }}
           >
-            tags: {tags.map((tag) => tag.slice(0,-10) + ',')}
+            tags: {tags.map((tag) => tag.slice(0, -10) + ',')}
           </p>
         }
         style={{ width: 240, borderRadius: '10px' }}
