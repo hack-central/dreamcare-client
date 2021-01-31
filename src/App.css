@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -51,23 +51,26 @@ a:focus {
 }
 
 .journal-container {
+  width: 90%;
+  min-height: 90vh;
   display: flex;
-  width: 100%;
   text-align: center;
   flex-wrap: wrap;
 }
 
 .journal-column {
-  min-width: 200px;
+    position: relative;
+    display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   flex: 1;
-  padding: 20px 10px;
+  padding: 20px;
   margin: 20px;
-  background: rgba(236, 234, 234, 0.1);
-  box-shadow: 0 8px 32px 0 #bc9f6b66;
-  backdrop-filter: blur( 3.0px );
-  -webkit-backdrop-filter: blur( 3.0px );
+  background: #f7eee6;
+  box-shadow: 0 4px 32px 0 #bc9f6b66;
   border-radius: 10px;
-  border: 1px solid #bc9f6b73;
+  border: 2px solid #bc9f6b73;
 }
 
 .glowing-text {
@@ -110,12 +113,12 @@ a:focus {
   font-size: 2em;
   text-align: center;
   font-weight: normal;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Alex Brush', cursive;
   /* background: -webkit-linear-gradient(#fff, #d6bd69);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
   overflow: hidden;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .speech-output {
@@ -142,9 +145,14 @@ a:focus {
   justify-content: center;
   flex-wrap: wrap;
 }
-
+.btn{
+    padding: 20px 0;
+    position: absolute;
+    bottom: 10px;
+}
 .voice-button {
-  /* margin: 50px 0;
+    margin: 60px 0;
+  /* 
   padding-bottom: 25px;
   position: relative;
   width: 100%;
@@ -156,10 +164,10 @@ a:focus {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center; */
-  margin: 50px 0;
+  
 }
 
-.voice-button:after {
+/* .voice-button:after {
   content: '';
   position: absolute;
   z-index: 0;
@@ -167,7 +175,7 @@ a:focus {
   right: 0;
   bottom: 0;
   left: 0;
-}
+} */
 
 .voice-button-icon {
   cursor: pointer;
@@ -187,7 +195,7 @@ a:focus {
   transition: box-shadow 400ms cubic-bezier(0.2, 0, 0.7, 1),
     transform 200ms cubic-bezier(0.2, 0, 0.7, 1),
     -webkit-transform 200ms cubic-bezier(0.2, 0, 0.7, 1);
-    border: 1px solid #bc9f6b73;
+    border: 2px solid #bc9f6b73;
 }
 
 .voice-button-icon:hover {
@@ -386,10 +394,11 @@ a:focus {
 /* Voice Animation Bar */
 
 .voice-coder {
+  width: 70%;
   position: relative;
   height: 5vh;
   display: grid;
-  grid-template-columns: repeat(45, 4px);
+  /* grid-template-columns: repeat(45, 4px); */
   grid-template-rows: 100%;
   grid-gap: 14px;
   justify-content: center;
@@ -626,4 +635,8 @@ a:focus {
     line-height: 1.2;
     padding: 25px;
   }
+}
+@media all and (max-width: 600px) {
+  .journal-container {flex-direction: column;}
+    
 }

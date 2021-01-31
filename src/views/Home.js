@@ -138,7 +138,11 @@ export default function Home() {
           </div>
         )}
 
-        
+        <div className="btn">
+        <Link to="" class="play">
+            Save!
+        </Link>
+        </div>
       </div>
 
       <div className="journal-column">...</div>
