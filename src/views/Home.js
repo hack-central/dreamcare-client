@@ -94,7 +94,6 @@ export default function Home() {
       <div className="journal-column">
         <h3 className="speech-input">{transcript}</h3>
         <h1 className="speech-output">Talk about your dream</h1>
-
         <div className="voice-button">
           <button
             className={
@@ -127,7 +126,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
       <div
         className="journal-column"
         contentEditable
