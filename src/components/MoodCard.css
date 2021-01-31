@@ -14,7 +14,7 @@
   position: relative;
   text-align: left;
   overflow: hidden;
-  padding: 30px;
+  padding: 15px;
   height: 100%;
   float: left;
   width: 40%;
@@ -22,10 +22,9 @@
 
 /* 	Product Name */
 #container .product-details h1 {
-  font-family: 'Old Standard TT', serif;
   display: inline-block;
   position: relative;
-  font-size: 34px;
+  font-size: 32px;
   color: #344055;
   margin: 0;
 }
