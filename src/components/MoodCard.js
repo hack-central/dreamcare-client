@@ -9,7 +9,6 @@ export default function MoodCard({ data }) {
   const [emotionLow, setEmotionLow] = useState('');
 
   useEffect(() => {
-    console.log(data);
     if (data) {
       const tags = data.tags;
       const moods = tags.map((e) => e.slice(0, -10));

@@ -1,10 +1,10 @@
 import { Card, Row, Col } from 'antd';
-
 import HappinessChart from '../components/HappinessChart';
 import MoodCard from '../components/MoodCard';
 import MoodRadarChart from '../components/MoodRadarChart';
 import DiaryChart from '../components/DiaryChart';
 import { useState, useEffect } from 'react';
+import Product from '../components/Product';
 
 export default function Report() {
   const [query, setQuery] = useState(undefined);
@@ -50,6 +50,31 @@ export default function Report() {
           </Row>
         </div>
       </div>
+      <div className="daily-stats">
+        <div className="weekly-stats-card">
+          <Row>
+            <Products data={data} />
+          </Row>
+        </div>
+      </div>
     </div>
   );
 }
+
+const Products = ({ data }) => {
+  if (data) {
+    console.log(data);
+    const { recommendedProducts } = data;
+    if (recommendedProducts.length > 4) {
+      const prods = [0, 1, 2, 3];
+      return prods.map((e, i) => {
+        return <Product data={recommendedProducts[e]} />;
+      });
+    } else {
+      return recommendedProducts.map((product, i) => {
+        return <Product data={product} />;
+      });
+    }
+  }
+  return null;
+};
