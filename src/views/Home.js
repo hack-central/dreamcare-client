@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -7,6 +7,7 @@ import SpeechRecognition, {
 import speak from '../assets/speak.svg';
 
 export default function Home() {
+  const history = useHistory();
   const { transcript, listening } = useSpeechRecognition();
   const [query, setQuery] = useState('');
   const [bars, setBars] = useState([]);
@@ -48,10 +49,6 @@ export default function Home() {
       });
   }, []);
 
-  if (response) {
-    <Redirect to={{ pathname: '/report', state: { response, query } }} />;
-  }
-
   const sendData = async () => {
     if (query) {
       const url =
@@ -68,9 +65,14 @@ export default function Home() {
       };
 
       const res = await axios(config);
-      if (res && res.data.success) {
+      if (res.status === 200) {
         const analyticsResponse = res.data;
         setResponse(analyticsResponse);
+        localStorage.setItem(
+          'mindPalace',
+          JSON.stringify({ response: analyticsResponse, query })
+        );
+        history.push('/report');
       }
     }
   };
@@ -107,7 +109,7 @@ export default function Home() {
           </div>
         )}
         <div className="btn" onClick={sendData}>
-          <Link class="play">Save!</Link>
+          <Link className="play">Save!</Link>
         </div>
       </div>
       <div

@@ -3,20 +3,21 @@ import confident from '../assets/moodImages/confident.png';
 
 import './MoodCard.css';
 
-export default function MoodCard(props) {
+export default function MoodCard({ data }) {
   const [emotionHigh, setEmotionHigh] = useState('');
   const [emotionMed, setEmotionMed] = useState('');
   const [emotionLow, setEmotionLow] = useState('');
 
   useEffect(() => {
-    if (props.tags) {
-      const tags = props.tags;
+    console.log(data);
+    if (data) {
+      const tags = data.tags;
       const moods = tags.map((e) => e.slice(0, -10));
       setEmotionHigh(moods[0]);
       setEmotionMed(moods[1]);
-      setEmotionLow(moods[2]);
+      setEmotionLow(moods[2] || "ecstacy");
     }
-  }, [props]);
+  }, [data]);
 
   return (
     <div id="container">
