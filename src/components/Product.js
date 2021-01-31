@@ -2,7 +2,9 @@ import { Card } from 'antd';
 
 const { Meta } = Card;
 
-export default function Product({ data: { tags, image, link, title } }) {
+export default function Product({
+  data: { tags, image, link, title, description },
+}) {
   return (
     <div style={{ padding: '0 20px' }}>
       <Card
@@ -15,14 +17,14 @@ export default function Product({ data: { tags, image, link, title } }) {
               marginBottom: '-3px',
             }}
           >
-            tags: {tags.map((tag) => tag.slice(0, -10) + ',')}
+            <b>Tags</b>: {tags.map((tag) => tag.slice(0, -10) + ',')}
           </p>
         }
         style={{ width: 240, borderRadius: '10px' }}
         cover={<img alt="example" src={image} />}
         onClick={(e) => window.open(link, '_blank')}
       >
-        <Meta title={title} description={link} />
+        <Meta title={title} description={description} />
       </Card>
     </div>
   );
@@ -31,6 +33,7 @@ export default function Product({ data: { tags, image, link, title } }) {
 Product.defaultProps = {
   title: 'Sample Product Title',
   link: 'https://www.example.com',
+  description: 'THis is a sample description',
   image: 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png',
   tags: ['Happy'],
 };

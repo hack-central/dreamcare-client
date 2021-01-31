@@ -55,13 +55,12 @@
 /* product image  */
 .product-image {
   transition: all 0.3s ease-out;
-  display: inline-block;
+  display: inline;
   position: relative;
   overflow: hidden;
   height: 100%;
   float: right;
   max-width: 45%;
-  display: inline-block;
 }
 
 #container img {

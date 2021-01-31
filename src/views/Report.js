@@ -23,7 +23,13 @@ export default function Report() {
   return (
     <div>
       <div className="daily-stats">
-        <div className="daily-stats-card">{query}</div>
+        <div
+          className="daily-stats-card"
+          style={{ padding: '20px', overflowY: 'scroll' }}
+        >
+          <h1>Today's Journal</h1>
+          {query}
+        </div>
         <div className="daily-stats-card">
           <MoodCard data={data} />
         </div>
@@ -32,22 +38,34 @@ export default function Report() {
         <div className="weekly-stats-card">
           <Row>
             <h1>Your Weekly DreamCare Statistics</h1>
-            <h6>(Placeholder data for the purpose of the hack)</h6>
+            <h6>
+              <i>Placeholder data for the purpose of the hack</i>
+            </h6>
           </Row>
           <Row justify="center">
             <Col justify="center">
               <MoodRadarChart />
-              <p style={{ textAlign: 'left', paddingLeft: '55px' }}>
+              <p
+                style={{
+                  textAlign: 'left',
+                  paddingLeft: '55px',
+                  fontWeight: 800,
+                }}
+              >
                 Overall Mood Radar Chart
               </p>
             </Col>
             <Col justify="center">
               <HappinessChart />
-              Weekly Happiness Chart
+              <p style={{ textAlign: 'center', fontWeight: 800 }}>
+                Weekly Happiness Chart
+              </p>
             </Col>
             <Col justify="center">
               <DiaryChart />
-              Dream Journaling Frequency
+              <p style={{ textAlign: 'center', fontWeight: 800 }}>
+                Dream Journaling Frequency
+              </p>
             </Col>
           </Row>
         </div>
@@ -55,6 +73,9 @@ export default function Report() {
       <div className="daily-stats">
         <div className="weekly-stats-card">
           <Row>
+            <h1>Based on your dream analysis, we recommend...</h1>
+          </Row>
+          <Row justify="center">
             <Products data={data} />
           </Row>
         </div>
@@ -68,7 +89,7 @@ const Products = ({ data }) => {
     console.log(data);
     const { recommendedProducts } = data;
     if (recommendedProducts.length > 4) {
-      const prods = [0, 1, 2, 3];
+      const prods = [0, 1, 2, 3, 4];
       return prods.map((e, i) => {
         return <Product data={recommendedProducts[e]} />;
       });

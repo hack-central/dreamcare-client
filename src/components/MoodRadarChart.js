@@ -61,11 +61,10 @@ export default class Example extends PureComponent {
         <PolarAngleAxis dataKey="subject" />
         <PolarRadiusAxis />
         <Radar
-          name="Mike"
+          name="My Moods"
           dataKey="A"
-          stroke="#0099b2"
-          fill="#9bd933"
-          fillOpacity={0.6}
+          stroke="#bc9f6b"
+          fill="#bc9f6bc2"
         />
       </RadarChart>
     );
