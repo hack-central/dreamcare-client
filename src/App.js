@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="main">
+      <div className="main">
       <Router>
         <Switch>
           <Route exact path="/home">
@@ -18,7 +18,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+      </div>
   );
 }
 

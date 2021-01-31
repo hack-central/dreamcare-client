@@ -138,34 +138,7 @@ export default function Home() {
           </div>
         )}
 
-        <div className="blockquote hint-box">
-          <h1>
-            Maybe try asking: <b></b>
-          </h1>
-          <h4>
-            <span>{timeLeft}</span> Seconds Left
-          </h4>
-        </div>
-        <div className="input-question">
-          <input
-            value={textQuery}
-            onKeyUp={(e) => {
-              if (e.key === 'Enter') {
-                setQuery(textQuery);
-              }
-            }}
-            onChange={(e) => setTextQuery(e.target.value)}
-            type="text"
-            className="question_input"
-            id="name"
-            placeholder="Can't use a mic? Ask here!"
-            required=""
-            autoComplete="off"
-          />
-          <label htmlFor="name" className="question_label">
-            Press Enter to submit
-          </label>
-        </div>
+        
       </div>
 
       <div className="journal-column">...</div>

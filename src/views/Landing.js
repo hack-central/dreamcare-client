@@ -8,7 +8,7 @@ export default function Landing() {
     <>
       <img
         src={landingImage}
-        style={{ borderRadius: '50%', maxWidth: '250px' }}
+        style={{ borderRadius: '50%', maxWidth: '250px', marginTop:'20px'}}
       />
       <h1 className="glowing-text">Mind Palace</h1>
       <div className="intro">
@@ -33,7 +33,7 @@ export default function Landing() {
           className="info"
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/kartikcho/MatBM"
+          href="https://github.com/hack-central/mind-palace-client"
         >
           Star us on GitHub
         </a>
