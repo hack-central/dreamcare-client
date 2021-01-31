@@ -119,7 +119,9 @@ export default function Home() {
   return (
     <div className="journal-container">
       <div className="journal-column">
-        <h3 className="speech-input">{transcript}hfueshui fuioh ghu eiouher giuo</h3>
+        <h3 className="speech-input">
+          {transcript}hfueshui fuioh ghu eiouher giuo
+        </h3>
         <h1 className="speech-output">"Lets talk about your dream!"</h1>
 
         <div className="voice-button">
@@ -138,11 +140,10 @@ export default function Home() {
           </div>
         )}
         <div className="btn">
-        <Link to="" class="play">
+          <Link to="" class="play">
             Save!
-        </Link>
+          </Link>
         </div>
-        
       </div>
 
       <div className="journal-column">...</div>
