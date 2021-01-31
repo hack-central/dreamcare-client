@@ -119,8 +119,8 @@ export default function Home() {
   return (
     <div className="journal-container">
       <div className="journal-column">
-        <h3 className="speech-input">{transcript}</h3>
-        <h1 className="speech-output">"{response}"</h1>
+        <h3 className="speech-input">{transcript}hfueshui fuioh ghu eiouher giuo</h3>
+        <h1 className="speech-output">"Lets talk about your dream!"</h1>
 
         <div className="voice-button">
           <button
@@ -137,12 +137,12 @@ export default function Home() {
             <Visualizer bars={bars} />
           </div>
         )}
-
         <div className="btn">
         <Link to="" class="play">
             Save!
         </Link>
         </div>
+        
       </div>
 
       <div className="journal-column">...</div>
