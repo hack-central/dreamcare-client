@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <div className="journal-container">
       {isLoading && (
-        <div className="journal-column">
+        <div className="journal-column" style={{ paddingTop: '23%' }}>
           <Spin size="large" />
         </div>
       )}
