@@ -5,7 +5,7 @@ import landingImage from '../assets/landingImage.png';
 
 export default function Landing() {
   return (
-    <>
+    <div className="main">
       <img
         src={landingImage}
         style={{ borderRadius: '50%', maxWidth: '250px', marginTop:'20px'}}
@@ -38,6 +38,6 @@ export default function Landing() {
           Star us on GitHub
         </a>
       </div>
-    </>
+    </div>
   );
 }

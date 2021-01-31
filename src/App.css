@@ -142,6 +142,7 @@ a:focus {
   display: flex;
   align-self: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn{
