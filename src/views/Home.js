@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -9,9 +9,8 @@ import speak from '../assets/speak.svg';
 export default function Home() {
   const { transcript, listening } = useSpeechRecognition();
   const [query, setQuery] = useState('');
-  const [audioBuffer, setAudioBuffer] = useState(undefined);
   const [bars, setBars] = useState([]);
-  const [response, setResponse] = useState('Lets talk about your dream!');
+  const [response, setResponse] = useState(undefined);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -49,46 +48,33 @@ export default function Home() {
       });
   }, []);
 
-  useEffect(() => {
-    if (audioBuffer) {
-      const context = new AudioContext() || new window.webkitAudioContext();
-      context.decodeAudioData(audioBuffer, (buffer) => {
-        const bufferSource = context.createBufferSource();
-        bufferSource.buffer = buffer;
-        bufferSource.connect(context.destination);
-        bufferSource.start();
-      });
+  if (response) {
+    <Redirect to={{ pathname: '/report', state: { response, query } }} />;
+  }
 
-      return () => context.close();
-    }
-  }, [audioBuffer]);
+  const sendData = async () => {
+    if (query) {
+      const url =
+        'https://mind-palace-api-dot-eastern-surface-293816.el.r.appspot.com/api/nlp';
+      var bodyFormData = new FormData();
+      bodyFormData.append('data', query);
+      const config = {
+        method: 'post',
+        url,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        data: bodyFormData,
+      };
 
-  useEffect(() => {
-    (async () => {
-      if (query) {
-        const data = JSON.stringify({ queries: [query] });
-        const config = {
-          method: 'post',
-          url: 'https://o2fast2curious-kkpo.uc.r.appspot.com/intent/text',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          data: data,
-        };
-
-        const res = await axios(config);
-        if (res && res.data.success) {
-          const {
-            fulfillmentText,
-            outputAudio: { data },
-          } = res.data.data[0];
-          const arrBuffer = new Uint8Array(data).buffer;
-          setAudioBuffer(arrBuffer);
-          setResponse(fulfillmentText);
-        }
+      const res = await axios(config);
+      if (res && res.data.success) {
+        const analyticsResponse = res.data;
+        setResponse(analyticsResponse);
       }
-    })();
-  }, [query]);
+    }
+  };
+
   return (
     <div className="journal-container">
       <div className="journal-column">
@@ -120,16 +106,15 @@ export default function Home() {
             <Visualizer bars={bars} />
           </div>
         )}
-        <div className="btn">
-          <Link to="" class="play">
-            Save!
-          </Link>
+        <div className="btn" onClick={sendData}>
+          <Link class="play">Save!</Link>
         </div>
       </div>
       <div
         className="journal-column"
         contentEditable
         onChange={(e) => setQuery(e.target.value)}
+        suppressContentEditableWarning
       >
         {query}
       </div>

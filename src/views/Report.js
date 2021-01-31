@@ -6,13 +6,13 @@ import MoodRadarChart from '../components/MoodRadarChart';
 import DiaryChart from '../components/DiaryChart';
 import Product from '../components/Product';
 
-export default function Report() {
+export default function Report({ query, response }) {
   return (
     <div>
       <div className="daily-stats">
-        <div className="daily-stats-card">...</div>
+        <div className="daily-stats-card">{query}</div>
         <div className="daily-stats-card">
-          <MoodCard />
+          <MoodCard data={response} />
         </div>
       </div>
       <div className="daily-stats">
