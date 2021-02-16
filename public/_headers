@@ -1,2 +1,0 @@
-/*
-  content-security-policy-report-only: frame-ancestors 'none'; default-src 'none'; script-src 'self' 'report-sample'; style-src 'self' 'report-sample'; object-src 'none'; frame-src 'none'; child-src 'none'; img-src 'self'; font-src 'self'; connect-src 'none'; manifest-src 'none'; base-uri 'self'; form-action 'none'; media-src 'none'; prefetch-src 'none'; worker-src 'none'; report-uri http://localhost:3006/dev/g/r/csp/ce5af577-7f1a-4f15-afbf-2743af19adfb/0/0/3?sct=79be5d05-0cb0-41cc-a54f-d9c03d95ced5&dpos=report
